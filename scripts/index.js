@@ -9,8 +9,9 @@ const stateElement2 = document.getElementById("state2");
 const stateElement3 = document.getElementById("state3");
 
 // Button Elements
-const btn1On = document.getElementById('btn1On');
-const btn1Off = document.getElementById('btn1Off');
+const btn10 = document.getElementById('btn10');
+const btn190 = document.getElementById('btn190');
+const btn1180 = document.getElementById('btn1180');
 const btn2On = document.getElementById('btn2On');
 const btn2Off = document.getElementById('btn2Off');
 const btn3On = document.getElementById('btn3On');
@@ -28,68 +29,73 @@ var dbRefOutput3 = firebase.database().ref().child(dbPathOutput3);
 
 // MANAGE LOGIN/LOGOUT UI
 const setupUI = (user) => {
-  if (user) {
-    //toggle UI elements
-    loginElement.style.display = 'none';
-    contentElement.style.display = 'block';
-    authBarElement.style.display ='block';
-    userDetailsElement.style.display ='block';
-    userDetailsElement.innerHTML = user.email;
+    if (user) {
+        //toggle UI elements
+        loginElement.style.display = 'none';
+        contentElement.style.display = 'block';
+        authBarElement.style.display = 'block';
+        userDetailsElement.style.display = 'block';
+        userDetailsElement.innerHTML = user.email;
 
-    //Update states depending on the database value
-    dbRefOutput1.on('value', snap => {
-        if(snap.val()==1) {
-            stateElement1.innerText="ON";
-        }
-        else{
-            stateElement1.innerText="OFF";
-        }
-    });
-    dbRefOutput2.on('value', snap => {
-        if(snap.val()==1) {
-            stateElement2.innerText="ON";
-        }
-        else{
-            stateElement2.innerText="OFF";
-        }
-    });
-    dbRefOutput3.on('value', snap => {
-        if(snap.val()==1) {
-            stateElement3.innerText="ON";
-        }
-        else{
-            stateElement3.innerText="OFF";
-        }
-    });
+        //Update states depending on the database value
+        dbRefOutput1.on('value', snap => {
+            if (snap.val() == 0) {
+                stateElement1.innerText = "0";
+            } else if (snap.val() == 90) {
+                stateElement1.innerText = "90";
+            }
+            else {
+                stateElement1.innerText = "180";
+            }
+        });
+        dbRefOutput2.on('value', snap => {
+            if (snap.val() == 1) {
+                stateElement2.innerText = "ON";
+            }
+            else {
+                stateElement2.innerText = "OFF";
+            }
+        });
+        dbRefOutput3.on('value', snap => {
+            if (snap.val() == 1) {
+                stateElement3.innerText = "ON";
+            }
+            else {
+                stateElement3.innerText = "OFF";
+            }
+        });
 
-    // Update database uppon button click
-    btn1On.onclick = () =>{
-        dbRefOutput1.set(1);
-    }
-    btn1Off.onclick = () =>{
-        dbRefOutput1.set(0);
-    }
+        // Update database uppon button click
+        btn10.onclick = () => {
+            dbRefOutput1.set(0);
+        }
+        btn190.onclick = () => {
+            dbRefOutput1.set(90);
+        }
+        btn1180.onclick = () => {
+            dbRefOutput1.set(180);
+        }
 
-    btn2On.onclick = () =>{
-        dbRefOutput2.set(1);
-    }
-    btn2Off.onclick = () =>{
-        dbRefOutput2.set(0);
-    }
+        btn2On.onclick = () => {
+            dbRefOutput2.set(1);
+        }
+        btn2Off.onclick = () => {
+            dbRefOutput2.set(0);
+        }
 
-    btn3On.onclick = () =>{
-        dbRefOutput3.set(1);
-    }
-    btn3Off.onclick = () =>{
-        dbRefOutput3.set(0);
-    }
+        btn3On.onclick = () => {
+            dbRefOutput3.set(1);
+        }
+        btn3Off.onclick = () => {
+            dbRefOutput3.set(0);
+        }
 
-  // if user is logged out
-  } else{
-    // toggle UI elements
-    loginElement.style.display = 'block';
-    authBarElement.style.display ='none';
-    userDetailsElement.style.display ='none';
-    contentElement.style.display = 'none';
-  }
+        // if user is logged out
+    } else {
+        // toggle UI elements
+        loginElement.style.display = 'block';
+        authBarElement.style.display = 'none';
+        userDetailsElement.style.display = 'none';
+        contentElement.style.display = 'none';
+    }
 }
