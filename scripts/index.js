@@ -39,14 +39,7 @@ const setupUI = (user) => {
 
         //Update states depending on the database value
         dbRefOutput1.on('value', snap => {
-            if (snap.val() == 0) {
-                stateElement1.innerText = "0";
-            } else if (snap.val() == 90) {
-                stateElement1.innerText = "90";
-            }
-            else {
-                stateElement1.innerText = "180";
-            }
+            stateElement1.innerText = snap.val();
         });
         dbRefOutput2.on('value', snap => {
             if (snap.val() == 1) {
