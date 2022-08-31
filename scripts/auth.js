@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         // get user info
-        const email = 'test@mail.com';
+        const email = 'web@mail.com';
         const password = loginForm['input-password'].value;
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
