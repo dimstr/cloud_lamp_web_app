@@ -8,8 +8,21 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <title>Document</title>
     <script>
-        module.exports = {
-            darkMode: 'class',
+        tailwind.config = {
+
+            theme: {
+                darkMode: 'class',
+                screens: {
+                    'tablet': '640px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'laptop': '1024px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'desktop': '1280px',
+                    // => @media (min-width: 1280px) { ... }
+                },
+            }
         }
     </script>
 </head>
@@ -22,55 +35,60 @@
 
             <div class="py-3"></div>
 
-            <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
-                <h2 class="dark:text-white text-lg">GPIO 12</h1>
-                    <div class="pt-3 pb-1 text-xl">
-                        <button
-                            class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
-                            0
-                        </button>
-                        <button
-                            class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
-                            90
-                        </button>
-                        <button
-                            class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
-                            180
-                        </button>
-                    </div>
-                    <h2 class="dark:text-white">State: 0</h1>
-            </div>
+            <div class="tablet:grid tablet:grid-rows-2 tablet:grid-flow-col tablet:gap-1">
 
-            <div class="py-3"></div>
-            <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
-                <h2 class="dark:text-white text-lg">GPIO 13</h1>
-                    <div class="pt-3 pb-1 text-xl">
-                        <button
-                            class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
-                            ON
-                        </button>
-                        <button
-                            class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
-                            OFF
-                        </button>
-                    </div>
-                    <h2 class="dark:text-white">State: OFF</h1>
-            </div>
+                <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
+                    <h2 class="dark:text-white text-lg">GPIO 12</h1>
+                        <div class="pt-3 pb-1 text-xl">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
+                                0
+                            </button>
+                            <button
+                                class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
+                                90
+                            </button>
+                            <button
+                                class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
+                                180
+                            </button>
+                        </div>
+                        <h2 class="dark:text-white">State: 0</h1>
+                </div>
+                
+                <div class="py-3"></div>
+                
+                <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
+                    <h2 class="dark:text-white text-lg">GPIO 13</h1>
+                        <div class="pt-3 pb-1 text-xl">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
+                                ON
+                            </button>
+                            <button
+                                class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
+                                OFF
+                            </button>
+                        </div>
+                        <h2 class="dark:text-white">State: OFF</h1>
+                </div>
 
-            <div class="py-3"></div>
-            <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
-                <h2 class="dark:text-white text-lg">GPIO 14</h1>
-                    <div class="pt-3 pb-1 text-xl">
-                        <button
-                            class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
-                            ON
-                        </button>
-                        <button
-                            class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
-                            OFF
-                        </button>
-                    </div>
-                    <h2 class="dark:text-white">State: OFF</h1>
+                <div class="py-3"></div>
+                <br></br>
+                <div class="bg-gray-100 dark:bg-zinc-800 rounded-md py-4 px-5 grid place-items-center">
+                    <h2 class="dark:text-white text-lg">GPIO 14</h1>
+                        <div class="pt-3 pb-1 text-xl">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
+                                ON
+                            </button>
+                            <button
+                                class="bg-blue-600 hover:bg-blue-500 px-4 py-2 font-semibold text-sm text-stone-100 rounded-md">
+                                OFF
+                            </button>
+                        </div>
+                        <h2 class="dark:text-white">State: OFF</h1>
+                </div>
             </div>
         </div>
     </div>
