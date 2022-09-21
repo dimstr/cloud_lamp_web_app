@@ -6,35 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <title>Document</title>
+    <title>Проверка...</title>
     <script>
         tailwind.config = {
-
             theme: {
                 darkMode: 'class',
-
             }
         }
     </script>
 </head>
 
-<body>
-    <div class="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
-        <div class="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-700/25 w-full"></div>
-        <div class="relative rounded-xl overflow-auto p-8">
-            <div class="max-w-sm mx-auto p-6 flex items-center bg-white rounded-xl shadow-lg space-x-4">
-                <div class="shrink-0">
+<body class="dark bg-[url('backs/light.png')] dark:bg-[url('backs/dark.png')]">
 
-                    <img class="h-12 w-12" src="https://raw.githubusercontent.com/dimstr/cloud_lamp_web_app/main/new_ver/backs/ezgif.com-gif-maker.gif">
+    <div class="relative rounded-xl overflow-auto py-10">
+        <div class="dark:bg-zinc-800 w-fit mx-auto py-4 px-2 bg-white rounded-xl shadow-lg space-x-4">
 
-                </div>
-                <div>
-                    <div class="text-xl font-medium text-black"> Проверка авторизации</div>
+            <img class="mx-auto h-56 w-56 rounded-xl"
+                src="https://raw.githubusercontent.com/dimstr/cloud_lamp_web_app/main/new_ver/backs/ezgif.com-gif-maker.gif">
 
-                </div>
-            </div>
+
+            <h1 class="text-center text-xl font-medium text-black dark:text-white">
+                Проверка авторизации...
+            </h1>
+
         </div>
-
     </div>
 
 </body>
